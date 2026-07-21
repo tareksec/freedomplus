@@ -84,7 +84,7 @@ function ArticlePage() {
           <p className="mt-6 text-lg text-slate-700 leading-relaxed italic">{article.excerpt}</p>
 
           <div className="mt-6 space-y-5 text-slate-800 leading-relaxed">
-            {article.content.map((p, i) => (
+            {article.content.map((p: string, i: number) => (
               <p key={i}>{p}</p>
             ))}
           </div>
