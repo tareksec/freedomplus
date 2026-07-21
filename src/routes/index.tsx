@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
-  Search, Bell, Upgrade, Clock, Brain, BookOpen, StickyNote,
+  Search, Bell, Clock, Brain, BookOpen, StickyNote,
   Globe2, Atom, PenSquare, Plus, ChevronRight, Sparkles, Library,
   BarChart3, Settings as SettingsIcon,
 } from "lucide-react";
