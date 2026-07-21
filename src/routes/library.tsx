@@ -7,9 +7,9 @@ import { books, articles } from "@/lib/demo-data";
 export const Route = createFileRoute("/library")({
   head: () => ({
     meta: [
-      { title: "Library — Zolve" },
+      { title: "Library — Freedom Plus" },
       { name: "description", content: "Browse your collection of books and articles across every topic you love." },
-      { property: "og:title", content: "Library — Zolve" },
+      { property: "og:title", content: "Library — Freedom Plus" },
       { property: "og:description", content: "Browse your books and articles." },
     ],
   }),

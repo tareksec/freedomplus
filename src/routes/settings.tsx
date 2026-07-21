@@ -6,9 +6,9 @@ import { AppShell } from "@/components/app-shell";
 export const Route = createFileRoute("/settings")({
   head: () => ({
     meta: [
-      { title: "Settings — Zolve" },
-      { name: "description", content: "Manage your Zolve profile, notifications, appearance, and reading preferences." },
-      { property: "og:title", content: "Settings — Zolve" },
+      { title: "Settings — Freedom Plus" },
+      { name: "description", content: "Manage your Freedom Plus profile, notifications, appearance, and reading preferences." },
+      { property: "og:title", content: "Settings — Freedom Plus" },
       { property: "og:description", content: "Manage your profile and preferences." },
     ],
   }),

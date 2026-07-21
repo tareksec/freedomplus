@@ -10,15 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NewsIdRouteImport } from './routes/news.$id'
 import { Route as BooksIdRouteImport } from './routes/books.$id'
 import { Route as ArticlesIdRouteImport } from './routes/articles.$id'
 
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibraryRoute = LibraryRouteImport.update({
@@ -31,10 +39,20 @@ const AnalyticsRoute = AnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const NewsIdRoute = NewsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => NewsRoute,
 } as any)
 const BooksIdRoute = BooksIdRouteImport.update({
   id: '/books/$id',
@@ -49,60 +67,80 @@ const ArticlesIdRoute = ArticlesIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/library': typeof LibraryRoute
+  '/news': typeof NewsRouteWithChildren
   '/settings': typeof SettingsRoute
   '/articles/$id': typeof ArticlesIdRoute
   '/books/$id': typeof BooksIdRoute
+  '/news/$id': typeof NewsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/library': typeof LibraryRoute
+  '/news': typeof NewsRouteWithChildren
   '/settings': typeof SettingsRoute
   '/articles/$id': typeof ArticlesIdRoute
   '/books/$id': typeof BooksIdRoute
+  '/news/$id': typeof NewsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
   '/library': typeof LibraryRoute
+  '/news': typeof NewsRouteWithChildren
   '/settings': typeof SettingsRoute
   '/articles/$id': typeof ArticlesIdRoute
   '/books/$id': typeof BooksIdRoute
+  '/news/$id': typeof NewsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/analytics'
     | '/library'
+    | '/news'
     | '/settings'
     | '/articles/$id'
     | '/books/$id'
+    | '/news/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/analytics'
     | '/library'
+    | '/news'
     | '/settings'
     | '/articles/$id'
     | '/books/$id'
+    | '/news/$id'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/analytics'
     | '/library'
+    | '/news'
     | '/settings'
     | '/articles/$id'
     | '/books/$id'
+    | '/news/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AnalyticsRoute: typeof AnalyticsRoute
   LibraryRoute: typeof LibraryRoute
+  NewsRoute: typeof NewsRouteWithChildren
   SettingsRoute: typeof SettingsRoute
   ArticlesIdRoute: typeof ArticlesIdRoute
   BooksIdRoute: typeof BooksIdRoute
@@ -115,6 +153,13 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/library': {
@@ -131,12 +176,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/news/$id': {
+      id: '/news/$id'
+      path: '/$id'
+      fullPath: '/news/$id'
+      preLoaderRoute: typeof NewsIdRouteImport
+      parentRoute: typeof NewsRoute
     }
     '/books/$id': {
       id: '/books/$id'
@@ -155,10 +214,22 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface NewsRouteChildren {
+  NewsIdRoute: typeof NewsIdRoute
+}
+
+const NewsRouteChildren: NewsRouteChildren = {
+  NewsIdRoute: NewsIdRoute,
+}
+
+const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AnalyticsRoute: AnalyticsRoute,
   LibraryRoute: LibraryRoute,
+  NewsRoute: NewsRouteWithChildren,
   SettingsRoute: SettingsRoute,
   ArticlesIdRoute: ArticlesIdRoute,
   BooksIdRoute: BooksIdRoute,

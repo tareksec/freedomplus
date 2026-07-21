@@ -77,11 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Zolve — Your Reading Journey" },
-      { name: "description", content: "A serene reading library dashboard to curate topics, track comprehension, and discover great books." },
-      { property: "og:title", content: "Zolve — Your Reading Journey" },
-      { property: "og:description", content: "Curate topics, track comprehension, discover great books." },
+      { title: "Freedom Plus | Free Learning Platform – Read Free Books, Articles & News" },
+      { name: "description", content: "Freedom Plus is a free learning platform where everyone can read free books, explore educational articles, and stay updated with the latest news. Enjoy an ad-free reading experience and unlimited access to knowledge." },
+      { property: "og:title", content: "Freedom Plus — Learn Freely. Read Freely. Grow Freely." },
+      { property: "og:description", content: "Free books, educational articles, and the latest news — 100% ad-free." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Freedom Plus" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

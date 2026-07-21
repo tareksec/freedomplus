@@ -11,10 +11,10 @@ import { articles, topAuthors } from "@/lib/demo-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zolve — অক্ষর পাঠাগার | Your Reading Journey" },
-      { name: "description", content: "Curate topics, track comprehension, and discover great books in a serene reading dashboard." },
-      { property: "og:title", content: "Zolve — অক্ষর পাঠাগার" },
-      { property: "og:description", content: "Curate topics, track comprehension, discover great books." },
+      { title: "Freedom Plus | Free Learning Platform – Read Free Books, Articles & News" },
+      { name: "description", content: "Freedom Plus is a free learning platform where everyone can read free books, explore educational articles, and stay updated with the latest news. Enjoy an ad-free reading experience and unlimited access to knowledge." },
+      { property: "og:title", content: "Freedom Plus — Learn Freely. Read Freely. Grow Freely." },
+      { property: "og:description", content: "Free books, educational articles, and the latest news — 100% ad-free." },
     ],
   }),
   component: Index,
@@ -64,9 +64,12 @@ function Index() {
 
         {/* Hero */}
         <section className="col-span-12 md:col-span-10 lg:col-span-6 relative">
-          <h1 className="font-bangla text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-slate-900">
-            অক্ষর পাঠাগার: আপনার<br />জ্ঞানযাত্রা শুরু করুন
+          <h1 className="text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-slate-900">
+            Learn Freely.<br />Read Freely. Grow Freely.
           </h1>
+          <p className="mt-3 text-sm md:text-base text-slate-700 max-w-md">
+            Freedom Plus is a free learning platform — thousands of books, expert articles, and trusted news. No subscriptions. No ads. Just knowledge.
+          </p>
           <div className="relative mt-6 h-[380px]">
             <img
               src={books3d}
@@ -114,14 +117,14 @@ function Index() {
 
           <div className="grid grid-cols-5 gap-5">
             <div className="col-span-3 rounded-3xl glass-soft p-5 relative overflow-hidden">
-              <h4 className="font-bangla text-lg font-bold text-slate-900 leading-tight">
-                প্রস্তাবিত কোর্স:<br />তথ্য প্রযুক্তি
+              <h4 className="text-lg font-bold text-slate-900 leading-tight">
+                Featured Path:<br />Technology & AI
               </h4>
-              <p className="font-bangla mt-2 text-xs text-slate-600 leading-relaxed max-w-[60%]">
-                নতুন টেকনোলজি কম্পিউটিং কোর্স। ভর্তি হয়ে নিন।
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed max-w-[60%]">
+                Programming guides, cybersecurity content, and machine learning explainers — all free.
               </p>
-              <Link to="/library" className="inline-block mt-3 font-bangla rounded-full bg-slate-900 px-4 py-1.5 text-xs font-medium text-white">
-                ভর্তি হোন
+              <Link to="/library" className="inline-block mt-3 rounded-full bg-slate-900 px-4 py-1.5 text-xs font-medium text-white">
+                Start Learning
               </Link>
               <img
                 src={courseBook}
@@ -132,8 +135,8 @@ function Index() {
             </div>
 
             <div className="col-span-2 space-y-4">
-              <AuthorGroup title="শীর্ষ লেখকদের অনুসরণ করুন" authors={topAuthors.slice(0, 2)} />
-              <AuthorGroup title="আরো লেখকদের দেখুন" authors={topAuthors.slice(2, 6)} small />
+              <AuthorGroup title="Featured authors on Freedom Plus" authors={topAuthors.slice(0, 2)} />
+              <AuthorGroup title="Discover more voices" authors={topAuthors.slice(2, 6)} small />
             </div>
           </div>
         </section>
@@ -198,7 +201,7 @@ function AuthorGroup({
   return (
     <div className="rounded-3xl glass-soft p-4">
       <div className="flex items-center justify-between mb-3">
-        <div className="font-bangla text-[11px] leading-tight text-slate-700 max-w-[70%]">{title}</div>
+        <div className="text-[11px] leading-tight text-slate-700 max-w-[70%]">{title}</div>
         <button className="text-[10px] text-slate-500 underline">See all</button>
       </div>
       <div className="grid grid-cols-2 gap-2">
@@ -210,7 +213,7 @@ function AuthorGroup({
               className={`${small ? "h-10 w-10" : "h-14 w-14"} rounded-full object-cover ring-2 ring-white`}
               loading="lazy"
             />
-            <span className="font-bangla text-[10px] text-slate-700 text-center leading-tight">{a.nameBn}</span>
+            <span className="text-[10px] text-slate-700 text-center leading-tight">{a.name.split(" ")[0]}</span>
           </div>
         ))}
       </div>
