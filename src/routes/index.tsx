@@ -64,9 +64,12 @@ function Index() {
 
         {/* Hero */}
         <section className="col-span-12 md:col-span-10 lg:col-span-6 relative">
-          <h1 className="font-bangla text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-slate-900">
-            অক্ষর পাঠাগার: আপনার<br />জ্ঞানযাত্রা শুরু করুন
+          <h1 className="text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight text-slate-900">
+            Learn Freely.<br />Read Freely. Grow Freely.
           </h1>
+          <p className="mt-3 text-sm md:text-base text-slate-700 max-w-md">
+            Freedom Plus is a free learning platform — thousands of books, expert articles, and trusted news. No subscriptions. No ads. Just knowledge.
+          </p>
           <div className="relative mt-6 h-[380px]">
             <img
               src={books3d}
