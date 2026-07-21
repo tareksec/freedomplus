@@ -60,9 +60,9 @@ export function AppShell({ children }: { children: ReactNode }) {
                 className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400"
               />
             </div>
-            <button className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition">
-              Upgrade
-            </button>
+            <Link to="/about" className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 transition">
+              100% Free
+            </Link>
             <button className="grid h-9 w-9 place-items-center rounded-full bg-white/70 border border-white/60">
               <Bell className="h-4 w-4 text-slate-700" />
             </button>
