@@ -13,8 +13,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Freedom Plus | Free Learning Platform – Read Free Books, Articles & News" },
       { name: "description", content: "Freedom Plus is a free learning platform where everyone can read free books, explore educational articles, and stay updated with the latest news. Enjoy an ad-free reading experience and unlimited access to knowledge." },
-      { property: "og:title", content: "Freedom Plus — Learn Freely. Read Freely. Grow Freely." },
-      { property: "og:description", content: "Free books, educational articles, and the latest news — 100% ad-free." },
+      { property: "og:title", content: "Freedom Plus | Free Learning Platform – Read Free Books, Articles & News" },
+      { property: "og:description", content: "Freedom Plus is a free learning platform where everyone can read free books, explore educational articles, and stay updated with the latest news. Enjoy an ad-free reading experience and unlimited access to knowledge." },
     ],
   }),
   component: Index,
