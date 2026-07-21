@@ -11,10 +11,10 @@ import { articles, topAuthors } from "@/lib/demo-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zolve — অক্ষর পাঠাগার | Your Reading Journey" },
-      { name: "description", content: "Curate topics, track comprehension, and discover great books in a serene reading dashboard." },
-      { property: "og:title", content: "Zolve — অক্ষর পাঠাগার" },
-      { property: "og:description", content: "Curate topics, track comprehension, discover great books." },
+      { title: "Freedom Plus | Free Learning Platform – Read Free Books, Articles & News" },
+      { name: "description", content: "Freedom Plus is a free learning platform where everyone can read free books, explore educational articles, and stay updated with the latest news. Enjoy an ad-free reading experience and unlimited access to knowledge." },
+      { property: "og:title", content: "Freedom Plus — Learn Freely. Read Freely. Grow Freely." },
+      { property: "og:description", content: "Free books, educational articles, and the latest news — 100% ad-free." },
     ],
   }),
   component: Index,
