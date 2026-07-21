@@ -184,3 +184,102 @@ export const topAuthors = [
   { name: "James Clear", nameBn: "জেমস ক্লিয়ার", img: "https://i.pravatar.cc/120?img=33" },
   { name: "Sharmila Sen", nameBn: "শর্মিলা সেন", img: "https://i.pravatar.cc/120?img=48" },
 ];
+
+export type NewsItem = {
+  id: string;
+  title: string;
+  category: string;
+  source: string;
+  date: string;
+  cover: string;
+  excerpt: string;
+  content: string[];
+};
+
+export const news: NewsItem[] = [
+  {
+    id: "ai-open-models-2026",
+    title: "Open-Source AI Models Surpass Proprietary Rivals in New Benchmark",
+    category: "Artificial Intelligence",
+    source: "Freedom Plus Newsroom",
+    date: "Jul 18, 2026",
+    cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&auto=format&fit=crop",
+    excerpt: "Community-trained models now match closed labs on reasoning benchmarks, reshaping who owns the future of AI.",
+    content: [
+      "For the first time, an openly licensed model has topped a widely-cited reasoning benchmark, edging out closed offerings from major labs.",
+      "The result is significant because open weights let researchers audit, fine-tune, and deploy models without vendor lock-in — a core pillar of accessible learning.",
+      "Educators are already integrating these models into free tutoring tools available to any student with an internet connection.",
+    ],
+  },
+  {
+    id: "cybersecurity-passkey-adoption",
+    title: "Passkeys Cross One Billion Users as Passwords Begin to Fade",
+    category: "Cybersecurity",
+    source: "Freedom Plus Newsroom",
+    date: "Jul 12, 2026",
+    cover: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop",
+    excerpt: "Phishing-resistant sign-in is going mainstream, and browsers are quietly retiring the password prompt.",
+    content: [
+      "Passkeys — cryptographic credentials tied to your device — have crossed a billion active users worldwide.",
+      "Unlike passwords, they cannot be reused, guessed, or phished, cutting account takeover attempts by an order of magnitude.",
+      "Expect password fields to gradually disappear from major services over the next two years.",
+    ],
+  },
+  {
+    id: "free-education-un-report",
+    title: "UN Report: Free Digital Libraries Now Reach 400 Million Learners",
+    category: "Education",
+    source: "Freedom Plus Newsroom",
+    date: "Jul 05, 2026",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&auto=format&fit=crop",
+    excerpt: "A landmark study finds free reading platforms are closing the education gap faster than traditional aid.",
+    content: [
+      "A new UNESCO report shows that free online libraries and learning platforms now serve over 400 million learners in low- and middle-income regions.",
+      "Access to ad-free reading experiences correlates strongly with improved literacy and time-on-task among students.",
+      "The report calls on governments to treat open knowledge infrastructure as public utility.",
+    ],
+  },
+  {
+    id: "programming-python-4",
+    title: "Python 4 Preview: Faster, Typed by Default, Backward Compatible",
+    category: "Programming",
+    source: "Freedom Plus Newsroom",
+    date: "Jun 28, 2026",
+    cover: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=1200&auto=format&fit=crop",
+    excerpt: "The next major Python release promises speed and safety without breaking the ecosystem developers love.",
+    content: [
+      "Python 4's first public preview lands with a JIT compiler, gradual mandatory typing, and — crucially — full backward compatibility with Python 3 code.",
+      "Early benchmarks show a 2–4x speedup on typical web workloads, closing the historic gap with compiled languages.",
+      "The core team credits years of community RFCs for the smooth transition path.",
+    ],
+  },
+  {
+    id: "space-solar-orbit",
+    title: "First Commercial Solar-Powered Satellite Beams Energy to Earth",
+    category: "Science",
+    source: "Freedom Plus Newsroom",
+    date: "Jun 20, 2026",
+    cover: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop",
+    excerpt: "A milestone test transmits kilowatts of clean energy from orbit to a remote ground station.",
+    content: [
+      "In a first-of-its-kind demonstration, a private satellite beamed kilowatts of solar power to a receiving array in the Australian outback.",
+      "Space-based solar avoids clouds and night, potentially delivering 24/7 clean baseload energy anywhere on Earth.",
+      "Commercial-scale deployments remain a decade out, but the physics — and now the economics — are lining up.",
+    ],
+  },
+  {
+    id: "business-remote-work",
+    title: "Remote Work Rebounds: 62% of Knowledge Jobs Now Fully Distributed",
+    category: "Business",
+    source: "Freedom Plus Newsroom",
+    date: "Jun 14, 2026",
+    cover: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop",
+    excerpt: "After a brief pullback, the flexible-work era is back — and this time it's structural.",
+    content: [
+      "A new global survey finds 62% of knowledge-work roles are now fully remote or remote-first, up from 48% a year ago.",
+      "Companies cite talent access and lower real-estate costs; workers cite time savings and better focus.",
+      "Analysts say the shift is now culturally locked in across most industries.",
+    ],
+  },
+];
+
