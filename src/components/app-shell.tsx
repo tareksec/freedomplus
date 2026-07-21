@@ -5,7 +5,9 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const nav = [
   { label: "Library", to: "/library" },
-  { label: "Reading Analytics", to: "/analytics" },
+  { label: "News", to: "/news" },
+  { label: "About", to: "/about" },
+  { label: "Analytics", to: "/analytics" },
   { label: "Settings", to: "/settings" },
 ] as const;
 
