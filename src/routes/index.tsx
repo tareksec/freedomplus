@@ -117,14 +117,14 @@ function Index() {
 
           <div className="grid grid-cols-5 gap-5">
             <div className="col-span-3 rounded-3xl glass-soft p-5 relative overflow-hidden">
-              <h4 className="font-bangla text-lg font-bold text-slate-900 leading-tight">
-                প্রস্তাবিত কোর্স:<br />তথ্য প্রযুক্তি
+              <h4 className="text-lg font-bold text-slate-900 leading-tight">
+                Featured Path:<br />Technology & AI
               </h4>
-              <p className="font-bangla mt-2 text-xs text-slate-600 leading-relaxed max-w-[60%]">
-                নতুন টেকনোলজি কম্পিউটিং কোর্স। ভর্তি হয়ে নিন।
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed max-w-[60%]">
+                Programming guides, cybersecurity content, and machine learning explainers — all free.
               </p>
-              <Link to="/library" className="inline-block mt-3 font-bangla rounded-full bg-slate-900 px-4 py-1.5 text-xs font-medium text-white">
-                ভর্তি হোন
+              <Link to="/library" className="inline-block mt-3 rounded-full bg-slate-900 px-4 py-1.5 text-xs font-medium text-white">
+                Start Learning
               </Link>
               <img
                 src={courseBook}
@@ -135,8 +135,8 @@ function Index() {
             </div>
 
             <div className="col-span-2 space-y-4">
-              <AuthorGroup title="শীর্ষ লেখকদের অনুসরণ করুন" authors={topAuthors.slice(0, 2)} />
-              <AuthorGroup title="আরো লেখকদের দেখুন" authors={topAuthors.slice(2, 6)} small />
+              <AuthorGroup title="Featured authors on Freedom Plus" authors={topAuthors.slice(0, 2)} />
+              <AuthorGroup title="Discover more voices" authors={topAuthors.slice(2, 6)} small />
             </div>
           </div>
         </section>
