@@ -201,7 +201,7 @@ function AuthorGroup({
   return (
     <div className="rounded-3xl glass-soft p-4">
       <div className="flex items-center justify-between mb-3">
-        <div className="font-bangla text-[11px] leading-tight text-slate-700 max-w-[70%]">{title}</div>
+        <div className="text-[11px] leading-tight text-slate-700 max-w-[70%]">{title}</div>
         <button className="text-[10px] text-slate-500 underline">See all</button>
       </div>
       <div className="grid grid-cols-2 gap-2">
