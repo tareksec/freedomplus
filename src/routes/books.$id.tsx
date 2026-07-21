@@ -11,12 +11,12 @@ export const Route = createFileRoute("/books/$id")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Book not found — Zolve" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Book not found — Freedom Plus" }, { name: "robots", content: "noindex" }] };
     }
     const { book } = loaderData;
     return {
       meta: [
-        { title: `${book.title} by ${book.author} — Zolve` },
+        { title: `${book.title} by ${book.author} — Freedom Plus` },
         { name: "description", content: book.description },
         { property: "og:title", content: book.title },
         { property: "og:description", content: book.description },

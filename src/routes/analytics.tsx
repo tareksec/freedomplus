@@ -5,9 +5,9 @@ import { AppShell } from "@/components/app-shell";
 export const Route = createFileRoute("/analytics")({
   head: () => ({
     meta: [
-      { title: "Reading Analytics — Zolve" },
+      { title: "Reading Analytics — Freedom Plus" },
       { name: "description", content: "See how your reading habits evolve — time, comprehension, pages, and streaks." },
-      { property: "og:title", content: "Reading Analytics — Zolve" },
+      { property: "og:title", content: "Reading Analytics — Freedom Plus" },
       { property: "og:description", content: "Track your reading habits over time." },
     ],
   }),
