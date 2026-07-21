@@ -56,7 +56,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <div className="hidden sm:flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 border border-white/60 w-56">
               <Search className="h-4 w-4 text-slate-500" />
               <input
-                placeholder="Search books, articles..."
+                placeholder="Search books, articles, news..."
                 className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400"
               />
             </div>
