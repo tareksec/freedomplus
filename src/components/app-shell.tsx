@@ -26,9 +26,9 @@ export function AppShell({ children }: { children: ReactNode }) {
               <Sparkles className="h-5 w-5" />
             </div>
             <div className="flex items-baseline gap-3">
-              <span className="text-xl font-bold tracking-tight text-slate-900">zolve</span>
-              <span className="font-bangla text-sm text-slate-600 hidden sm:inline">
-                অক্ষর পাঠাগার
+              <span className="text-xl font-bold tracking-tight text-slate-900">Freedom Plus</span>
+              <span className="text-sm text-slate-600 hidden sm:inline">
+                Learn Freely
               </span>
             </div>
           </Link>
