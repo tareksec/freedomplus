@@ -213,7 +213,7 @@ function AuthorGroup({
               className={`${small ? "h-10 w-10" : "h-14 w-14"} rounded-full object-cover ring-2 ring-white`}
               loading="lazy"
             />
-            <span className="font-bangla text-[10px] text-slate-700 text-center leading-tight">{a.nameBn}</span>
+            <span className="text-[10px] text-slate-700 text-center leading-tight">{a.name.split(" ")[0]}</span>
           </div>
         ))}
       </div>
