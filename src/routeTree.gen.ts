@@ -10,18 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as NotesRouteImport } from './routes/notes'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as NewsIdRouteImport } from './routes/news.$id'
-import { Route as BooksIdRouteImport } from './routes/books.$id'
-import { Route as ArticlesIdRouteImport } from './routes/articles.$id'
+import { Route as ReadSlugRouteImport } from './routes/read.$slug'
+import { Route as AuthorsSlugRouteImport } from './routes/authors.$slug'
 
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsRoute = NewsRouteImport.update({
@@ -32,6 +44,11 @@ const NewsRoute = NewsRouteImport.update({
 const LibraryRoute = LibraryRouteImport.update({
   id: '/library',
   path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnalyticsRoute = AnalyticsRouteImport.update({
@@ -49,19 +66,14 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NewsIdRoute = NewsIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => NewsRoute,
-} as any)
-const BooksIdRoute = BooksIdRouteImport.update({
-  id: '/books/$id',
-  path: '/books/$id',
+const ReadSlugRoute = ReadSlugRouteImport.update({
+  id: '/read/$slug',
+  path: '/read/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArticlesIdRoute = ArticlesIdRouteImport.update({
-  id: '/articles/$id',
-  path: '/articles/$id',
+const AuthorsSlugRoute = AuthorsSlugRouteImport.update({
+  id: '/authors/$slug',
+  path: '/authors/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -69,35 +81,41 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
+  '/auth': typeof AuthRoute
   '/library': typeof LibraryRoute
-  '/news': typeof NewsRouteWithChildren
+  '/news': typeof NewsRoute
+  '/notes': typeof NotesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
-  '/articles/$id': typeof ArticlesIdRoute
-  '/books/$id': typeof BooksIdRoute
-  '/news/$id': typeof NewsIdRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/read/$slug': typeof ReadSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
+  '/auth': typeof AuthRoute
   '/library': typeof LibraryRoute
-  '/news': typeof NewsRouteWithChildren
+  '/news': typeof NewsRoute
+  '/notes': typeof NotesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
-  '/articles/$id': typeof ArticlesIdRoute
-  '/books/$id': typeof BooksIdRoute
-  '/news/$id': typeof NewsIdRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/read/$slug': typeof ReadSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/analytics': typeof AnalyticsRoute
+  '/auth': typeof AuthRoute
   '/library': typeof LibraryRoute
-  '/news': typeof NewsRouteWithChildren
+  '/news': typeof NewsRoute
+  '/notes': typeof NotesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/settings': typeof SettingsRoute
-  '/articles/$id': typeof ArticlesIdRoute
-  '/books/$id': typeof BooksIdRoute
-  '/news/$id': typeof NewsIdRoute
+  '/authors/$slug': typeof AuthorsSlugRoute
+  '/read/$slug': typeof ReadSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -105,45 +123,54 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/analytics'
+    | '/auth'
     | '/library'
     | '/news'
+    | '/notes'
+    | '/reset-password'
     | '/settings'
-    | '/articles/$id'
-    | '/books/$id'
-    | '/news/$id'
+    | '/authors/$slug'
+    | '/read/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/analytics'
+    | '/auth'
     | '/library'
     | '/news'
+    | '/notes'
+    | '/reset-password'
     | '/settings'
-    | '/articles/$id'
-    | '/books/$id'
-    | '/news/$id'
+    | '/authors/$slug'
+    | '/read/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/analytics'
+    | '/auth'
     | '/library'
     | '/news'
+    | '/notes'
+    | '/reset-password'
     | '/settings'
-    | '/articles/$id'
-    | '/books/$id'
-    | '/news/$id'
+    | '/authors/$slug'
+    | '/read/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  AuthRoute: typeof AuthRoute
   LibraryRoute: typeof LibraryRoute
-  NewsRoute: typeof NewsRouteWithChildren
+  NewsRoute: typeof NewsRoute
+  NotesRoute: typeof NotesRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SettingsRoute: typeof SettingsRoute
-  ArticlesIdRoute: typeof ArticlesIdRoute
-  BooksIdRoute: typeof BooksIdRoute
+  AuthorsSlugRoute: typeof AuthorsSlugRoute
+  ReadSlugRoute: typeof ReadSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -153,6 +180,20 @@ declare module '@tanstack/react-router' {
       path: '/settings'
       fullPath: '/settings'
       preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news': {
@@ -167,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/library'
       preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/analytics': {
@@ -190,49 +238,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/news/$id': {
-      id: '/news/$id'
-      path: '/$id'
-      fullPath: '/news/$id'
-      preLoaderRoute: typeof NewsIdRouteImport
-      parentRoute: typeof NewsRoute
-    }
-    '/books/$id': {
-      id: '/books/$id'
-      path: '/books/$id'
-      fullPath: '/books/$id'
-      preLoaderRoute: typeof BooksIdRouteImport
+    '/read/$slug': {
+      id: '/read/$slug'
+      path: '/read/$slug'
+      fullPath: '/read/$slug'
+      preLoaderRoute: typeof ReadSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/articles/$id': {
-      id: '/articles/$id'
-      path: '/articles/$id'
-      fullPath: '/articles/$id'
-      preLoaderRoute: typeof ArticlesIdRouteImport
+    '/authors/$slug': {
+      id: '/authors/$slug'
+      path: '/authors/$slug'
+      fullPath: '/authors/$slug'
+      preLoaderRoute: typeof AuthorsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface NewsRouteChildren {
-  NewsIdRoute: typeof NewsIdRoute
-}
-
-const NewsRouteChildren: NewsRouteChildren = {
-  NewsIdRoute: NewsIdRoute,
-}
-
-const NewsRouteWithChildren = NewsRoute._addFileChildren(NewsRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AnalyticsRoute: AnalyticsRoute,
+  AuthRoute: AuthRoute,
   LibraryRoute: LibraryRoute,
-  NewsRoute: NewsRouteWithChildren,
+  NewsRoute: NewsRoute,
+  NotesRoute: NotesRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SettingsRoute: SettingsRoute,
-  ArticlesIdRoute: ArticlesIdRoute,
-  BooksIdRoute: BooksIdRoute,
+  AuthorsSlugRoute: AuthorsSlugRoute,
+  ReadSlugRoute: ReadSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
